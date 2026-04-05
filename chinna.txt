@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Login</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Student Login</h2>
+
+<input type="text" id="username" placeholder="Enter Username"><br>
+<input type="password" id="password" placeholder="Enter Password"><br>
+
+<button onclick="login()">Login</button>
+
+<h3 id="result"></h3>
+
+<script>
+function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    // Sample data
+    let students = {
+        "ravi": "1234",
+        "sita": "5678",
+        "rahul": "9999"
+    };
+
+    if (students[user] && students[user] === pass) {
+        document.getElementById("result").innerHTML = "Login Successful ✅";
+    } else {
+        document.getElementById("result").innerHTML = "Invalid Username or Password ❌";
+    }
+}
+</script>
+
+</body>
+</html>
